@@ -1,0 +1,6 @@
+{
+  "name": "Prestige Antiquities",
+  "description": "Premium museum-grade classical antiquities, fine art, and rare collectibles. Curating venerable forms, telling timeless stories.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

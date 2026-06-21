@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cinzel", "Playfair Display", Georgia, serif;
+  --color-ivory: var(--theme-ivory, #F5F3EF);
+  --color-charcoal: var(--theme-charcoal, #2C2C2C);
+  --color-bronze: var(--theme-bronze, #B8860B);
+  --color-bronze-light: var(--theme-bronze-light, #D4AF37);
+}
+
+/* Base resets & custom smooth layout */
+html {
+  scroll-behavior: smooth;
+  background-color: var(--theme-charcoal, #2C2C2C);
+}
+
+/* Custom premium scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1A1A1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(184, 134, 11, 0.4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B8860B;
+}
+
+/* Custom decorative hover effect for luxury listings */
+.ornament-link {
+  position: relative;
+}
+
+.ornament-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background-color: #B8860B;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.ornament-link:hover::after {
+  width: 100%;
+}
+
+.hover-divider {
+  transition: width 0.3s ease;
+}
+
+button:hover .hover-divider {
+  width: 100%;
+}
+
+/* Perspective utility for 3D card tilts */
+@utility perspective-1000 {
+  perspective: 1000px;
+}
+
+/* Custom keyframes and scan active utility for laser sweep */
+@keyframes scan-line {
+  0% {
+    top: 0%;
+  }
+  50% {
+    top: 100%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+
+@utility animate-scan-line {
+  animation: scan-line 4s linear infinite;
+}
+
